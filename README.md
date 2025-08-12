@@ -16,7 +16,7 @@ Exercícios que envolvem a passagem de atributos para os compoentes e utilizaç�
 Criar um componente Greeting que recebe via props um nome e exibe uma saudação.
 
 
-[Clique aqui](https://rawcdn.githack.com/MikaelOliveiraDev/exercicios-react/233abb9530511c913ac8dcebc373536c7b403e15/exercicio_01/index.html) para ver a resolução.
+[Clique aqui](https://raw.githack.com/MikaelOliveiraDev/exercicios-react/main/exercicio_01/index.html) para ver a resolução.
 
 #### 1.2. Cartão de Produto
 Criar um componente ProductCard que recebe via props os seguintes atributos:
