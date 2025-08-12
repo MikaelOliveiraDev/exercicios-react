@@ -13,6 +13,82 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Exercicio</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+
+      #root {
+        display: flex;
+        gap: 30px; /* Espaço entre as listas */
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .CheckList {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        width: 300px;
+        color: #343a40;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .CheckList:hover {
+        transform: translateY(-5px);
+      }
+
+      .CheckList h3 {
+        color: #007bff;
+        margin-top: 0;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 15px;
+      }
+
+      .CheckList ul {
+        list-style-type: none; /* Remove os marcadores de lista padrão */
+        padding: 0;
+        margin: 0;
+      }
+
+      .CheckList li {
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #f8f9fa;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      
+      .CheckList li:last-child {
+        border-bottom: none; /* Remove a borda do último item */
+      }
+
+      .CheckList li:hover {
+        background-color: #f8f9fa;
+      }
+
+      .CheckList input[type="checkbox"] {
+        margin-right: 15px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+      
+      .CheckList label {
+        font-size: 1em;
+        flex-grow: 1;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
@@ -22,13 +98,12 @@
         const items = props.items.map((item) => {
           return (
             <li key={item.id}>
-              <input type="checkbox" />
-              <label>{item.text}</label>
+              <input type="checkbox" id={`item-${item.id}-${props.title}`} />
+              <label htmlFor={`item-${item.id}-${props.title}`}>{item.text}</label>
             </li>
           );
         });
 
-		
         return (
           <div className="CheckList">
             <h3>{props.title}</h3>
@@ -44,7 +119,7 @@
               title="Afazeres"
               items={[
                 { id: 1, text: "Estudar React" },
-                { id: 2, text: "Fazer exercicios" },
+                { id: 2, text: "Fazer exercícios" },
                 { id: 3, text: "Tomar café" },
               ]}
             />

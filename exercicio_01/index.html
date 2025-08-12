@@ -1,28 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-	<title>Exercicio 1</title>
+    <title>Exercicio 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef; /* Cor de fundo cinza claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .greeting-card {
+            background-color: #ffffff; /* Fundo branco para o "cartão" */
+            border-radius: 12px; /* Cantos mais arredondados */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidade */
+            padding: 40px 60px; /* Mais espaço interno */
+            text-align: center;
+            max-width: 500px;
+            color: #495057; /* Cor de texto cinza escuro */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o efeito de hover */
+        }
+
+        .greeting-card:hover {
+            transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .greeting-card h1 {
+            font-size: 2.2em;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-	<div id="root"></div>
-	
-	<script type="text/babel">
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        function Greeting(props) {
+            // Adicionamos a classe 'greeting-card' aqui para aplicar o estilo
+            return <div className="greeting-card">
+                <h1>Olá, {props.name}! Seja bem-vindo(a)!</h1>
+            </div>
+        }
 
-		function Greeting(props) {
-			return <h1>Olá, {props.name}! Seja bem-vindo(a)!</h1>
-		}
+        function App() {
+            return <Greeting name="Mikael" />
+        }
 
-		function App() {
-			return <Greeting name="Mikael" />
-		}
-
-		const root = ReactDOM.createRoot(document.querySelector("#root"))
-		root.render(<App/>)
-	</script>
+        const root = ReactDOM.createRoot(document.querySelector("#root"))
+        root.render(<App/>)
+    </script>
 </body>
 </html>

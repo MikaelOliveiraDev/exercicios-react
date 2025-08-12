@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,39 +13,88 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Exercicio 2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Estilo para o contêiner dos cartões */
+      #root {
+        display: flex;
+        gap: 20px; /* Espaço entre os cartões */
+        flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha em telas menores */
+        justify-content: center;
+      }
+
+      /* Estilo para cada cartão de produto */
+      .ProductCard {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px; /* Largura fixa para os cartões */
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .ProductCard:hover {
+          transform: translateY(-5px); /* Efeito sutil de levantar ao passar o mouse */
+      }
+      
+      .ProductCard h3 {
+          color: #333;
+          margin-top: 0;
+      }
+
+      .ProductCard h4 {
+          color: #007bff;
+          margin: 10px 0;
+      }
+
+      .ProductCard p {
+          color: #666;
+          font-size: 0.9em;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
 
     <script type="text/babel">
       function ProductCard(props) {
-		const price = new Intl.NumberFormat('pt-BR', {
-			style: "currency",
-			currency: 'BRL'
-		}).format(props.price)
-		
-      	return (
-      		<div className="ProductCard">
-      			<h3>{props.title}</h3>
-      			<h4>{price}</h4>
-      			<p>{props.description}</p>
-      		</div>
-      	)
+        const price = new Intl.NumberFormat('pt-BR', {
+          style: "currency",
+          currency: 'BRL'
+        }).format(props.price)
+        
+        return (
+          <div className="ProductCard">
+            <h3>{props.title}</h3>
+            <h4>{price}</h4>
+            <p>{props.description}</p>
+          </div>
+        )
       }
 
       function App() {
-      	return (
-			<>
-				<ProductCard
-				title="Camisa React"
-				price={79.90}
-				description="Camisa confortável para programadores."/>
-				<ProductCard
-				title="Tennis JSX"
-				price={49.90}
-				description="Calçado versátil. Caminhe tanto pelo codigo JS quanto HTML."/>
-				</>
-      	)
+        return (
+          <>
+            <ProductCard
+              title="Camisa React"
+              price={79.90}
+              description="Camisa confortável para programadores."/>
+            <ProductCard
+              title="Tennis JSX"
+              price={49.90}
+              description="Calçado versátil. Caminhe tanto pelo código JS quanto HTML."/>
+          </>
+        )
       }
 
       const root = ReactDOM.createRoot(document.querySelector("#root"))
