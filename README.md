@@ -30,7 +30,7 @@ E renderiza um cartão de produto estilizado.
 [Clique aqui](https://rawcdn.githack.com/MikaelOliveiraDev/exercicios-react/233abb9530511c913ac8dcebc373536c7b403e15/exercicio_02/index.html) para ver a resolução.
 
 
-### 3. Lista de Tarefas
+#### 1.3. Lista de Tarefas
 Criar um componente CheckList que recebe via props um titulo e um array de objetos com os itens. Exibir todos os itens da lista dentro de um elemento `<ul>`.
 
 [Clique aqui](https://rawcdn.githack.com/MikaelOliveiraDev/exercicios-react/233abb9530511c913ac8dcebc373536c7b403e15/exercicio_03/index.html) para ver a resolução.
