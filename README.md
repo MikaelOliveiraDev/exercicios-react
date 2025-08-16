@@ -58,7 +58,7 @@ As imagens podem ser passadas via array de objetos no próprio componente, cada 
 
 ## 5. Listas
 
-### 5.1. Lista de Tarefas
+### 5.1. Lista com Marcadores
 Criar um componente `<CheckList />` que recebe via props um título e um array de objetos com os itens. Exibir todos os itens da lista dentro de um elemento `<ul>`.
 
 ### 5.2. Lista de Itens com Adição
